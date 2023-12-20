@@ -1,0 +1,185 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum AttackType {
+  Melee
+  AntiAir
+  Air
+  All
+}
+
+enum UnitType {
+  Ground
+  Air
+}
+
+enum ItemObtainability {
+  Creep
+  Shop
+}
+
+enum ItemType {
+  Permanent
+  Consumable
+}
+
+model Race {
+  id         Int        @id @default(autoincrement())
+  name       String
+  icon       String
+  hero       Hero[]
+  ability    Ability?
+  item       Item[]
+  Card       Card[]
+  Building   Building[]
+  created_at DateTime   @default(now())
+  updated_at DateTime   @updatedAt
+  Unit       Unit[]
+  Upgrade    Upgrade[]
+}
+
+model Card {
+  id            Int      @id @default(autoincrement())
+  name          String
+  description   String
+  icon          String
+  race          Race[]
+  times_in_deck Int
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+}
+
+model Hero {
+  id          Int        @id @default(autoincrement())
+  name        String
+  icon        String
+  move        Int        @default(2)
+  damage      Int        @default(5)
+  health      Int        @default(10)
+  cost        Int
+  attack_type AttackType
+  race        Race?      @relation(fields: [raceId], references: [id])
+  raceId      Int?
+  ability     Ability[]
+  created_at  DateTime   @default(now())
+  updated_at  DateTime   @updatedAt
+}
+
+model Ability {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String
+  icon        String
+  hero        Hero?    @relation(fields: [heroId], references: [id])
+  heroId      Int?
+  Race        Race?    @relation(fields: [raceId], references: [id])
+  raceId      Int?     @unique
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+  Unit        Unit?    @relation(fields: [unitId], references: [id])
+  unitId      Int?
+  Upgrade     Upgrade? @relation(fields: [upgradeId], references: [id])
+  upgradeId   Int?
+}
+
+model Map {
+  id         Int      @id @default(autoincrement())
+  name       String   @unique
+  image      String
+  team_count Int
+  creep      Creep[]
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model Creep {
+  id          Int        @id @default(autoincrement())
+  name        String
+  icon        String
+  level       Int
+  health      Int
+  damage      Int
+  attack_type AttackType
+  unit_type   UnitType   @default(Ground)
+  map         Map[]
+  item        Item[]
+  created_at  DateTime   @default(now())
+  updated_at  DateTime   @updatedAt
+}
+
+model Item {
+  id            Int               @id @default(autoincrement())
+  name          String
+  description   String            @db.VarChar(10000)
+  icon          String
+  price_gold    Int
+  price_wood    Int
+  type          ItemType
+  obtainability ItemObtainability @default(Shop)
+  race          Race[]
+  creep         Creep[]
+  created_at    DateTime          @default(now())
+  updated_at    DateTime          @updatedAt
+}
+
+model Building {
+  id          Int      @id @default(autoincrement())
+  name        String
+  icon        String
+  description String
+  priceGold   Int
+  priceWood   Int
+  race        Race?    @relation(fields: [raceId], references: [id])
+  raceId      Int?
+  Unit        Unit[]
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+}
+
+model Unit {
+  id           Int        @id @default(autoincrement())
+  name         String
+  icon         String
+  priceGold    Int
+  priceWood    Int
+  health       Int
+  damage       Int
+  tech         Int
+  range        Int        @default(1)
+  movement     Int        @default(1)
+  race         Race?      @relation(fields: [raceId], references: [id])
+  building     Building[]
+  attack_type  AttackType
+  special_unit Boolean
+  unit_type    UnitType   @default(Ground)
+  buildingId   Int?
+  ability      Ability[]
+  created_at   DateTime   @default(now())
+  updated_at   DateTime   @updatedAt
+  raceId       Int?
+}
+
+model Upgrade {
+  id          Int       @id @default(autoincrement())
+  name        String
+  price_gold  Int
+  price_wood  Int
+  icon        String?
+  description String
+  tech        Int
+  ability     Ability[]
+  race        Race?     @relation(fields: [raceId], references: [id])
+  created_at  DateTime  @default(now())
+  updated_at  DateTime  @updatedAt
+  raceId      Int
+}
