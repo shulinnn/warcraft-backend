@@ -14,6 +14,9 @@ upgradeRouter.get(
             id: parseInt(req.params.raceId),
           },
         },
+        include: {
+          ability: true,
+        },
       })
       .catch((error) => res.status(400).json(error))
       .then((cards) => res.status(200).json(cards));
