@@ -569,7 +569,7 @@ export default async function main() {
       price_wood: 3,
       icon: "upgrades/reincarnation.webp",
       description:
-        " upgrade lze zničit v prubehu hry „zničením upgradu“) Obnoví padlého hrdinu na hl. budově.",
+        " upgrade lze zničit v prubehu hry „zničením upgradu“) Obnoví padlého hrdinu na hl. budově.",
       tech: 3,
       race: {
         connect: {
@@ -603,7 +603,7 @@ export default async function main() {
       price_wood: 4,
       icon: "upgrades/marketplace.webp",
       description:
-        "Vylepší zakladní obchod o další lektvary - V obyčejnem voodoo salonku lze navíc zakoupit :",
+        "Vylepší zakladní obchod o další lektvary - V obyčejnem voodoo salonku lze navíc zakoupit :",
       tech: 3,
       ability: {
         createMany: {
@@ -777,23 +777,6 @@ export default async function main() {
       description:
         "Při použití poskytne slevu na cokoliv (co stojí zlato,dřevo) 100%. (1x)",
       tech: 2,
-      race: {
-        connect: {
-          id: 4,
-        },
-      },
-    },
-  });
-
-  await prisma.upgrade.create({
-    data: {
-      name: "The Rat",
-      price_gold: 0,
-      price_wood: 1,
-      icon: "upgrades/therat.webp",
-      description:
-        "Vytvoří krysu u pohřebiště,ta může kupovat předměty hrdinům,brát hrdiny z taverny,brát karty s budov(celkově ovládat neutrální budovy) Hp:2 , útok: 0 , Pohyb: 3 Pole",
-      tech: 1,
       race: {
         connect: {
           id: 4,
