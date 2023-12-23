@@ -148,7 +148,7 @@ export default async function main() {
   await prisma.card.create({
     data: {
       name: "Markmanship",
-      description: "Zvýší dostřel vašich jednotek na 1 kolo o 1",
+      description: "Zvýší dostřel 3 vašich jednotek na 1 kolo o 1",
       icon: "cards/BTNMarksmanship.webp",
       times_in_deck: 2,
       race: {
@@ -166,7 +166,7 @@ export default async function main() {
   await prisma.card.create({
     data: {
       name: "Militia",
-      description: "Všichni vaši delníci získají +1 utok a +1 hp",
+      description: "Všichni vaši delníci získají +1 utok a +1 hp na 2 kola",
       icon: "cards/BTNMilitia.webp",
       times_in_deck: 2,
       race: {
@@ -254,7 +254,8 @@ export default async function main() {
   await prisma.card.create({
     data: {
       name: "Polymorph",
-      description: "Přemění jednotku na ovečku která má 1hp a 1dmg",
+      description:
+        "Přemění jednotku na ovečku (nelze dispellovat === zmizí ze hry)",
       icon: "cards/BTNPolymorph.webp",
       times_in_deck: 2,
       race: {
@@ -336,7 +337,7 @@ export default async function main() {
     data: {
       name: "Summon Build",
       description:
-        "Vytvoří jakoukoliv undead budovu poblíž jakékoliv vaší jednotky zdarma.",
+        "Vytvoří jakoukoliv undead budovu poblíž jakékoliv vaší jednotky zdarma. Budova se staví podle klasických pravidel.",
       icon: "cards/BTNSummonBuild.webp",
       times_in_deck: 2,
       race: {

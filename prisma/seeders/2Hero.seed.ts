@@ -46,10 +46,16 @@ export default async function main() {
               icon: "hero/BTNWarStomp.webp",
             },
             {
-              name: "Command (auta)",
+              name: "Command (aura)",
               description:
                 "Vaši hrdinové dostanou po dobu života Chieftaina +1 pohyb (i spojenci)",
               icon: "hero/PASBTNCommand.webp",
+            },
+            {
+              name: "Reincarnation Aura (aura)",
+              description:
+                "Hrdinům se každe kolo obnoví jeden život. (platí po dobu života chieftaina) i pro spojence",
+              icon: "hero/BTNReincarnationAura.webp",
             },
           ],
         },
@@ -85,8 +91,15 @@ export default async function main() {
             },
             {
               name: "Critical strike (aura)",
-              description: "Hrdina má každým útokem šanci na kritický útok.",
+              description:
+                "Hrdina má každým útokem šanci na kritický útok. (padne-li 1-4 hrdina dá základní damage / 5/6 dá 2x damage)",
               icon: "hero/PASBTNCriticalStrike.webp",
+            },
+            {
+              name: "Bladestorm",
+              description:
+                " Hrdina odpushuje všechny jednotky s jednoho pole na  2 pole vzdalene místo libovolným směrem. (Platí podminky terenu meelee nemuže na vodu atd)",
+              icon: "hero/BTNBladestorm.webp",
             },
           ],
         },
@@ -123,6 +136,12 @@ export default async function main() {
               name: "Feral spirits",
               description: "Farseer vyvolá 2 vlky kteří mají 5 hp a 1 dmg",
               icon: "hero/BTNSpiritWolf.webp",
+            },
+            {
+              name: "Card Explorer",
+              description:
+                "Hráč si smí vzít 2 karty ze svého balíčku (lze použit i na ally)",
+              icon: "hero/BTNCardExplorer.webp",
             },
           ],
         },
@@ -162,6 +181,12 @@ export default async function main() {
                 "Hrdina přečaruje jakoukoliv vyvolanou jednotku na mapě (platí i na Archimunda, Pekelníka a ostatní hrdinské summony) (platí přes celou mapu)",
               icon: "hero/BTNBigBadVoodooability.webp",
             },
+            {
+              name: "Serpent Ward",
+              description:
+                "Hrdina vytvoří Hada s 1 hp který utočí na dalku 3 polí (je statický) a má dmg 3. (lze vyvolat každe kolo 1noho lze použít 3x ",
+              icon: "hero/BTnSerpentWard.webp",
+            },
           ],
         },
       },
@@ -195,10 +220,16 @@ export default async function main() {
               icon: "hero/BTNDivineIntervention.webp",
             },
             {
-              name: "Peasant life",
+              name: "God's Ankh",
               description:
-                "Oživí padlého dělníka (může oživit i spojenci), dělník se objedví na poli kde se nachází Paladin.",
+                "Oživí svého druhého nebo spojeneckého hrdinu na hlavní budově s 1hp a oživený hrdina nesmí jedno kolo nic dělat",
               icon: "hero/BTNResurrection.webp",
+            },
+            {
+              name: "Devotion Aura",
+              icon: "hero/BTNDevotionAura.webp",
+              description:
+                "Všichni hrdinové (vaši, spojenečtí) po zabití creepu mužou obdržet pouze knížky. Každa knížka přídá místo 1 dmg/hp (+2) dmg/hp a padne li Kniha schopnosti hráč ji obdrží normálně a nebo si muže obnovit již použitý spell. Tyto bonusy platí je-li Paladin stále naživu. ",
             },
           ],
         },
@@ -235,8 +266,14 @@ export default async function main() {
             {
               name: "Mind drain",
               description:
-                "Protihráč musí v jednom kole ukázat všechny jeho karty (pouze vám)",
+                "Jeden protihráč musí v jednom kole ukázat všechny jeho karty (všem)",
               icon: "hero/BTNManaDrain.webp",
+            },
+            {
+              name: "Phoenix",
+              icon: "hero/BTNPhoenix.webp",
+              description:
+                "Vysummonuje fenixe který je air a má 8HP a 4 damage , Po každém provedenem útoku ztratí život.  ",
             },
           ],
         },
@@ -261,7 +298,7 @@ export default async function main() {
             {
               name: "Blizzard",
               description:
-                " Zasáhne jednotky na jednom poli i letecké a způsobí jim 2 HP a v dalším kole nepřatelské ZASAŽENÉ jednotky mají snížený pohyb o 1 (lze použít max na 3 pole)",
+                "Zasáhne jednotky na jednom poli i letecké a způsobí jim 2 HP a v dalším kole nepřatelské ZASAŽENÉ jednotky mají snížený pohyb o 1 (lze použít max na 3 pole)",
               icon: "hero/BTNBlizzard.webp",
             },
             {
@@ -274,6 +311,12 @@ export default async function main() {
               name: "Fast Teleport",
               description: "Vyporti hrdinu na jakekoliv pole na mapě (1x)",
               icon: "hero/BTNMassTeleport.webp",
+            },
+            {
+              name: "Magic hole Aura",
+              description:
+                "Zvyší damage všem speciálním a summon jednotkám o 1. ( po dobu svého žití) i spojeneckým.",
+              icon: "hero/BTNMagicHoleAura.webp",
             },
           ],
         },
@@ -313,6 +356,12 @@ export default async function main() {
                 "Ukradne nepříteli jakýkoliv předmět který vlastní hrdina, předmět poté vlastní mountain king",
               icon: "hero/BTNAvatar.webp",
             },
+            {
+              name: "Hammer Clan",
+              description:
+                "Hrdina po použití tohoto kouzla dá své nebo spojenecké budově nezranitelnost na 2 kola. (budovy lze během nezranitelnosti opravovat)",
+              icon: "hero/BTNHammerClan.webp",
+            },
           ],
         },
       },
@@ -345,8 +394,14 @@ export default async function main() {
             },
             {
               name: "Nature therapy",
-              description: "Obnoví spojeneckémá hrdinovi již použitý ability",
+              description: "Obnoví spojeneckému hrdinovi již použitý ability",
               icon: "hero/BTNTranquility.webp",
+            },
+            {
+              description:
+                "Hrdina generuje 1 wood a po vygenerování si vybere komu jej dá či si jej nechá (aura).",
+              name: "Wood Aura",
+              icon: "hero/BTNWoodAura.webp",
             },
           ],
         },
@@ -376,15 +431,21 @@ export default async function main() {
             },
             {
               name: "Fire arrow",
-              description: "Na jedno kolo dostřel +1",
+              description:
+                "Vytvoří ohýnek který odhaluje neviditelne jednotky a jednotky si u něj mohou  vyměnovat itemy jeden item za kolo ( jen ally ) 1HP KAŽDY HRAČ MUŽE OBETOVAT DŘEVO NA PŘIDANÍ DŘEVA DO OHNER A ZVEDNE MU TIM HP O 1 POZOR KAŽDY HRAČ MUŽE DŘEVO PŘIDAT JEN JEDNOU.",
               icon: "hero/BTNsearingarrows.webp",
             },
-
             {
               name: "Starfall",
               description:
-                "kněžka se nemuže hýbat začne poškozovat všechny nepřátelské hrdiny o 1 hp ( přes celou mapou ) pokud se hráč s ní pohne ruší se kouzlo",
+                "Kněžka se nemuže hýbat začne poškozovat všechny nepřátelské hrdiny o 1 hp ( přes celou mapou ) pokud se hráč s ní pohne ruší se kouzlo",
               icon: "hero/BTNstarfall.webp",
+            },
+            {
+              name: "Arrow Aura",
+              description:
+                "Po dobu žití kněžky -tato aura přídá všem budovám které dokážou udělat nějaky střelný damage ( věže,nory,zigguraty, hlavky u UD po techu) (neplati na orský main který ma upgrade na ostny) +1 Damage. Plati i na spojence.",
+              icon: "hero/BTNArrowAura.webp",
             },
           ],
         },
@@ -422,6 +483,12 @@ export default async function main() {
                 "Hrdina dostane +1 dmg a může na air jednotky (napořád)",
               icon: "hero/BTNMetamorphosis.webp",
             },
+            {
+              name: "Soul Collector Aura",
+              description:
+                "Pokud demon hunter zabije nepřátelského  hrdinu jeho tým  obdrží  1 zlato /v solu pouze majtel hrdiny. ",
+              icon: "hero/BTNSoulCollectorAura.webp",
+            },
           ],
         },
       },
@@ -445,19 +512,24 @@ export default async function main() {
             {
               name: "Creep maniac",
               description:
-                "Ubere creepu na polovinu ( pouze vybranemu creepu ,né všem )",
+                "Wardenka vyšle coil který ma 2 dmg , za každý další item který vlastní nepřítelský hrdina se coilu zvyšuje damage o 3, přes celou mapu",
               icon: "hero/BTNShadowStrike.webp",
             },
             {
               name: "Blink",
-              description: "Hrdina dokáže se přenést na jakoukoliv budovu",
+              description: "Hrdina se dokáže přenést na jakoukoliv budovu",
               icon: "hero/BTNBlink.webp",
             },
             {
               name: "Spiritual power",
-              description:
-                "+1 pohyb a 1 dmg pro všechny stromovce. Na 3 kola. ",
+              description: "+1 pohyb a 1 dmg pro všechny stromovce. Na 3 kola.",
               icon: "hero/BTNSpiritOfVengeance.webp",
+            },
+            {
+              name: "Creep Trap",
+              description:
+                "Wardenka toto kouzlo muže použít v tahu enemy když creepuje neutralni creep nebo passivniho moba. Po použítí tohoto kouzla obdrží vybraný creep +5Dmg v jeho kole utoku , tento bonus platí pouze jedno kolo. Lze použít 3x.V jednom kole lze použít pouze jednou (nestackuje se).",
+              icon: "hero/BTNCreepTrapo.webp",
             },
           ],
         },
@@ -481,7 +553,7 @@ export default async function main() {
           data: [
             {
               name: "Dark walker",
-              description: "Vyvolá zadarmo sp. jednotku",
+              description: "Vyvolá zadarmo sp. jednotku (platí i na spojence)",
               icon: "hero/BTNCarrionSwarm.webp",
             },
             {
@@ -493,8 +565,14 @@ export default async function main() {
             {
               name: "Vampirit (aura)",
               description:
-                "Pokud ji použijete vaši i spojencovi hrdinové dostanou 2x odměny za zabití creepu ( Passivni aura, která se ruší až po smrti hrdiny)",
+                "Pokud ji použijete vaši i spojencovi hrdinové dostanou 2x gold za zabití creepu ( Passivni aura, která se ruší až po smrti hrdiny)",
               icon: "hero/PASBTNVampiricAura.webp",
+            },
+            {
+              name: "Inferno",
+              description:
+                "Vysummonuje Pekelníka , který spadne kdekoliv na mapě po spawnuti utrpí všechny jednotky 2 DMG (na jednom poli) pekelník má 1 pohyb 5 Hp 2 DMG.",
+              icon: "hero/BTNInferno.webp",
             },
           ],
         },
@@ -529,8 +607,13 @@ export default async function main() {
             {
               name: "Dark ritual",
               description:
-                "Dark ritual - Udělá zadarmo upgrade(je potřeba mít danou budovu kde se upg nachází)",
+                "Udělá zadarmo upgrade(podle vašeho techu / lze použít i na ally)",
               icon: "hero/BTNDarkRitual.webp",
+            },
+            {
+              name: "Dead Rose",
+              description: "Lich Spálí jedny cele stromy. (přes celou mapu) ",
+              icon: "hero/BTNDeadRose.webp",
             },
           ],
         },
@@ -561,14 +644,20 @@ export default async function main() {
             {
               name: "Death pact",
               description:
-                " Hrdina zabije svou vlastní jednotku a tato jednotka dá své vlastní životy hrdinovy , pokud teda ma jednotka 7 hp tak hrdina bude mit celkove hp 17",
+                "Hrdina zabije svou vlastní jednotku a tato jednotka dá své vlastní životy hrdinovy , pokud teda ma jednotka 7 hp tak hrdina bude mit celkove hp 17",
               icon: "hero/BTNDeathPact.webp",
             },
             {
               name: "Unholy (aura)",
               description:
-                "Zvýší všem dělníkům +1HP ( i spojencovým ) (do doby dokud je váš hrdina naživu)",
+                "Zvyšuje dmg všem hrdinům podle počtu pernamentních itemů v inventáři (1 item = +1 damage, platí i na spojence)",
               icon: "hero/PASBTNUnholyAura.webp",
+            },
+            {
+              name: "Arms of Undeads",
+              description:
+                "promeni 2 enemy unitky (ne-hrdina, ne-air) dle vyberu a udela z nich vlastni zombie - maji 1dmg a 1hp (pohyb 1 pole).",
+              icon: "hero/BTNArms.webp",
             },
           ],
         },
@@ -593,13 +682,13 @@ export default async function main() {
             {
               name: "Impale",
               description:
-                "Za každou zabitou jednotku obdrží hrdina 3 wood – 3x",
+                "Za každou zabitou jednotku obdrží hrdina 1 gold - 3x",
               icon: "hero/BTNImpale.webp",
             },
             {
-              name: "Spikes",
+              name: "Magic Shield (aura)",
               description:
-                "Za každou zabitou jednotku dostanete jeden gold-  3x",
+                "Hrdinové( i spojenečtí)  neobdrží od  utočných kouzel nepřátelských hrdinu žádný damage. Efekty kouzel ale stále platí. (např. darkranger prohodí hrdinu pod aurou neutrpí damage) ale efekt se provede.",
               icon: "hero/PASBTNThornShield.webp",
             },
             {
@@ -607,6 +696,12 @@ export default async function main() {
               description:
                 "Každé kolo mužete vyvolat jednoho pavouka(Melee) 5x, Pavouk má 3hp 1 dmg",
               icon: "hero/BTNCarrionScarabsOff.webp",
+            },
+            {
+              name: "Worm Queen",
+              description:
+                "Vytvoří na mapě síť ,která dokaže lapit nepřátelskou  jednotku při pruchodu skrze ni. Jednotka dostává negativni efekt (karty sítě) takže se nemuže hybat ani utočit. (lze dispellovat). Cryplord může postavit až 3 síťe. Po využiti všech 3 již nelze stavit ani dostavovat další.(1 Sít / kolo) může být více na jednom poli. ",
+              icon: "hero/BTNwq.webp",
             },
           ],
         },
@@ -638,6 +733,12 @@ export default async function main() {
               description: "Hrdina vytvoří pod sebou katapult (zdarma)",
               icon: "hero/BTNCatapultium.webp",
             },
+            {
+              name: "Ultimate Factory",
+              description:
+                "Tinker vytvoři pod sebou přenosnou tovarnu, která je ultimatni tím, že se v ní dá vytvořit jakýkoliv druh jednotek (HERO,AA,Meele,Air,speciální  jednotky,dělníci,kata (prostě všechny units dané rasy) (neplati na Summon units) budová má 10hp.(počítá se jako budova) Nelze v ní stavit neutralni hrdiny.",
+              icon: "hero/BTNfac.webp",
+            },
           ],
         },
       },
@@ -666,9 +767,15 @@ export default async function main() {
               icon: "hero/BTNNeutralManaShield.webp",
             },
             {
-              name: "Water walker",
-              description: "Naga může chodit po vodě ( passive ) (Aura)",
+              name: "Water walker (Aura)",
+              description: "Naga může chodit po vodě",
               icon: "hero/BTNTornado.webp",
+            },
+            {
+              name: "Stoned Chain",
+              description:
+                "Hrdina po použití kouzla se muže přemístit na jakekoliv vodní políčko na mapě.(pokud ma water walk muze po ni chodit) a pokud vyleze na vodnim políčku u pevniny muže z vodního políčka na pevninu.",
+              icon: "hero/BTNStonedChain.webp",
             },
           ],
         },
@@ -703,6 +810,12 @@ export default async function main() {
                 "Zakaže nepřatelským hrdinum dostavat itemy z creepu",
               icon: "hero/BTNStampede.webp",
             },
+            {
+              name: "Wild Life",
+              description:
+                "Beast Master naspawnuje random Pasivniho moba (pod sebou).",
+              icon: "hero/BTNWildLife.webp",
+            },
           ],
         },
       },
@@ -721,7 +834,7 @@ export default async function main() {
             {
               name: "Roar",
               description:
-                " Sníží nepřátelským jednotkám dmg o 1 ( jednotky co maji dmg 1 maji furt 1 ) 	Napořád do smrti pitlorda ( vyrobené jednotky mají taky o 1 dmg míň ! )",
+                "Sežere jakoukoliv jednotku (ne-hrdina) platí i na air",
               icon: "hero/BTNHowlOfTerror.webp",
             },
             {
@@ -734,6 +847,12 @@ export default async function main() {
               description:
                 "Tato schopnost vrátí použitou kartu zpátky zpět vám a její effekt trva, ale karta jde zpět  k vám do ruky , a lze použít ještě jednou. (Karta musí být použita v tomtéž kole jako  tato schopnost hrdiny)",
               icon: "hero/BTNDoom.webp",
+            },
+            {
+              name: "Magma Water",
+              description:
+                "Pole s vodou se stanou lávové pole, přes které mužou už chodit všechny druhy jednotek. Každa jednotka ale utrpí 1 dmg na každem poli přes které projde,jediná vyjímka  jsou Pitlordi + Firelordi kteří jsou na těchto polích immuní vůči efektu lávového pole. ",
+              icon: "hero/BTNMagmaWater.webp",
             },
           ],
         },
@@ -759,14 +878,20 @@ export default async function main() {
             {
               name: "Transform arrow",
               description:
-                " pokud hrdina zabije / dorazí jednotku promění ji na svého dělníka (maximální počet dělníků 8) platí napořád ; neplatí na hrdiny. ( do smrti hrdiny)",
+                "Pokud hrdina zabije / dorazí jednotku promění ji na svého dělníka (maximální počet dělníků 8) platí napořád ; neplatí na hrdiny. ( do smrti hrdiny)",
               icon: "hero/BTNTheBlackArrowOnOff.webp",
             },
             {
               name: "Demon's evolution",
               description:
-                "Prohodí 2 různé jednotky mezi sebou a jedne z nich ubere 2 životy",
+                "Prohodí 2 různé pozice jednotek mezi sebou a jedne z nich ubere 2 životy",
               icon: "hero/BTNCharm.webp",
+            },
+            {
+              name: "Life Share",
+              description:
+                "Majitel který použije Lifeshare na vlastní (nebo spojeneckou) jednotku/hrdinu zpřístupní ostatním členum týmu vyčerpávat za ni veškeré svoje akce. (trvání jedno kolo) (tzn. Že za jednotku/hrdinu mužou všichni vykonavat pohyb/utok/použiti předmetu atd.) ",
+              icon: "hero/BTNLifeShare.webp",
             },
           ],
         },
@@ -784,13 +909,15 @@ export default async function main() {
         createMany: {
           data: [
             {
-              name: "Drunked armor",
-              description: "Creep nezpusobuje žadný Dmg po dobu 3 kol hrdinovi",
+              name: "Drunken armor",
+              description:
+                "Creep nezpusobuje žadný Dmg hrdinům (platí i na spojence)",
               icon: "hero/PASBTNDrunkenDodge.webp",
             },
             {
               name: "Beer",
-              description: " přidá vám 1 zlato ; 1 dřevo",
+              description:
+                "Po použití naspawnuje kolem sebe 1x předmět piva, Kterykoliv hrdina si pivo muže vzít k sobě do inventáře (ally i enemy i vy i samotna panda). Tento item samozřejmě muže mit pouze 1x v inventaři jak říkaji pravidla o předmětech. Po použití předmětu piva si bud to mužete dolečit 3 životy nebo se teleportovat na tavernu. Toto kouzlo lze použít 3x.",
               icon: "hero/BTNStrongDrink.webp",
             },
             {
@@ -798,6 +925,12 @@ export default async function main() {
               description:
                 "Spáli-te li 2 vaše karty (libovolné) panda vytechuje (ihned) hlavní budovu na tier 2/3 podle aktuálního techu.",
               icon: "hero/BTNStormEarthFire.webp",
+            },
+            {
+              name: "Dragon breathe",
+              description:
+                "Zvyší nebo sníží úroveň creepu o 1 (Zabity creep dropuje předměty z daneho levelu ) Statistiky creepu zůstávají stejné. ",
+              icon: "hero/BTNDragonBreathe.webp",
             },
           ],
         },
@@ -807,7 +940,7 @@ export default async function main() {
 
   await prisma.hero.create({
     data: {
-      name: " Fire lord",
+      name: "Fire lord",
       cost: 6,
       icon: "hero/BTNHeroAvatarOfFlame.webp",
       attack_type: AttackType.AntiAir,
@@ -815,21 +948,27 @@ export default async function main() {
         createMany: {
           data: [
             {
-              name: "Supp burn",
-              description: "Zakáže všem nepřitelům brat hrdinu z taverny",
+              name: "Item drainer",
+              description: "Zničí nepříteli všechny itemy v inventáři",
               icon: "hero/BTNSoulBurn.webp",
             },
             {
               name: "Lava Spawn",
               description:
-                "Na každé nepřetelské hlavní budově se vám zrodí jeden splozenec lávy ten má útok 2 a 5 HP (AA)",
+                "Na každé nepřátelské hlavní budově se vám zrodí jeden splozenec lávy ten má útok 2 a 5 HP (AA)",
               icon: "hero/BTNLavaSpawn.webp",
             },
             {
               name: "Exodus",
               description:
-                "Zakáže všem používat neutralní budovy kromě taverny ( obchod,brani karet apod.)",
+                "zničí neutralní budovu.Která nelze již pak používat (nikým)",
               icon: "hero/BTNVolcano.webp",
+            },
+            {
+              name: "Burn Technology (Aura)",
+              description:
+                "pokud hrdina pod firelordovou aurou zemře (ally nebo vlastní ) exploduje a zabije nepřátelskou jednotku. Platí i pro samotného firelorda(ne-hrdina , ne-air) ",
+              icon: "hero/BTNbt.webp",
             },
           ],
         },
@@ -853,8 +992,9 @@ export default async function main() {
               icon: "hero/BTNHealingSpray.webp",
             },
             {
-              name: "Acid bomb",
-              description: "Ubere nepřátelským leteckým jednotkám na polovinu",
+              name: "Insta time bottle",
+              description:
+                " Hrdina obdrží na svůj útok na jedno kolo INSTA KILL",
               icon: "hero/BTNAcidBomb.webp",
             },
             {
@@ -862,6 +1002,12 @@ export default async function main() {
               description:
                 "Můžetete použít na jakoukoliv jednotku nepřátelskou, ta umře a vy ( na creep  neplatí a na hrdiny taky ne) dostanete za ni jeji hodnotu zlata a dřeva.",
               icon: "hero/BTNTransmute.webp",
+            },
+            {
+              name: "Dopping",
+              description:
+                "Alchymista dostane schopnost prodavat předměty za každý předmět dostane 1g a 1w. také může tradovat předměty s  jinýma hrdinama všechno lze prodavat /tradovat přes celou mapu.  1 předmět  za kolo.  (3x)",
+              icon: "hero/BTNd.webp",
             },
           ],
         },

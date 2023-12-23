@@ -82,7 +82,7 @@ export default async function main() {
       price_wood: 2,
       icon: "upgrades/lumberjack.webp",
       description:
-        "Zakáže nepřítelům používat malé a velké teleporty (napořád) Tento upgrade lze zničit v prubehu hry „zničením upgradu“",
+        "Zakáže nepřátelům používat malé a velké teleporty (napořád) Tento upgrade lze zničit v prubehu hry „zničením upgradu“",
       tech: 2,
       race: {
         connect: {
@@ -145,46 +145,12 @@ export default async function main() {
 
   await prisma.upgrade.create({
     data: {
-      name: "Extra cannons",
-      price_gold: 1,
-      price_wood: 1,
-      icon: "upgrades/extracannons.webp",
-      description:
-        "Po použití mají věže možnost 2x zaútočit v jednom kole.Trvání do konce života věží.",
-      tech: 2,
-      race: {
-        connect: {
-          id: 1,
-        },
-      },
-    },
-  });
-
-  await prisma.upgrade.create({
-    data: {
       name: "Enchanced Armors",
       price_gold: 1,
       price_wood: 0,
       icon: "upgrades/enhancedarmors.webp",
       description:
-        "Všichni vaši hrdinove můžou obdržet od jedne jednotky max 1 dmg.",
-      tech: 3,
-      race: {
-        connect: {
-          id: 1,
-        },
-      },
-    },
-  });
-
-  await prisma.upgrade.create({
-    data: {
-      name: "Enchanced Armors",
-      price_gold: 1,
-      price_wood: 0,
-      icon: "upgrades/enhancedarmors.webp",
-      description:
-        "Všichni vaši hrdinove můžou obdržet od jedne jednotky max 1 dmg.",
+        "Hrdina může vykrýt jeden útok od nepřátelského hrdiny (upgrade se poté zničí)",
       tech: 3,
       race: {
         connect: {
@@ -250,7 +216,8 @@ export default async function main() {
       name: "Young Academy",
       price_gold: 0,
       price_wood: 3,
-      description: "Tento upgrade lze zničit v prubehu hry „zničením upgradu",
+      description:
+        "Upgrade spawne 2 jednotky dítě dalaranu na kovárně. Tento upgrade lze zničit v prubehu hry „zničením upgradu",
       tech: 1,
       race: {
         connect: {
@@ -265,11 +232,6 @@ export default async function main() {
               description: "Ma pohyb o 3 pole.2hp, Nemá útok. Muže stavit věž.",
               icon: "upgrades/dalarankid.webp",
             },
-            {
-              name: "Dítě Lordeonu",
-              description: "Ma pohyb o 3 pole.2hp, Nemá útok. Může stavit věž.",
-              icon: "upgrades/lordeonkid.webp",
-            },
           ],
         },
       },
@@ -282,7 +244,7 @@ export default async function main() {
       price_gold: 1,
       price_wood: 1,
       icon: "upgrades/dwarftank.webp",
-      description: "Vykořeněné budovy +5Hp",
+      description: "Vykořeněné budovy obdrží napořád 1 damage",
       tech: 1,
       race: {
         connect: {
@@ -294,11 +256,12 @@ export default async function main() {
 
   await prisma.upgrade.create({
     data: {
-      name: "Eat tree",
+      name: "Elf Token",
       price_gold: 0,
       price_wood: 1,
       icon: "upgrades/eattree.webp",
-      description: "Vykořeněná budova může jít stromy +6w",
+      description:
+        "Po použití upgradu obdržíte token pasivního moba kterého si na mapě vyberete, daný mob je odstraněn z mapy a vy získáte reward",
       tech: 1,
       race: {
         connect: {
@@ -348,7 +311,7 @@ export default async function main() {
       price_wood: 2,
       icon: "upgrades/dispell.webp",
       description:
-        "Bludička(dělník) nyní má schopnost odpálit se(dispell) ,zapříčiní tak,že zruší na poli na kterém stojí všechny negativní effekty. (Jedná se o Přeměn, Polapit, Síťka UD, Zmrzačit, Oštěp,HEX (sh),Sleep,Worm Queen) ",
+        "Bludička(dělník) nyní má schopnost odpálit se(dispell) ,zapříčiní tak,že zruší na poli na kterém stojí všechny negativní effekty. (Jedná se o Polapit, Síťka UD, Zmrzačit, Oštěp,HEX (sh),Sleep,Worm Queen) ",
       tech: 1,
       race: {
         connect: {
@@ -366,23 +329,6 @@ export default async function main() {
       icon: "upgrades/entorb.webp",
       description: "Umožní stromovcům provádět útok na vzdušné  jednotky.",
       tech: 1,
-      race: {
-        connect: {
-          id: 2,
-        },
-      },
-    },
-  });
-
-  await prisma.upgrade.create({
-    data: {
-      name: "Overmine",
-      price_gold: 1,
-      price_wood: 0,
-      icon: "upgrades/overmine.webp",
-      description:
-        "poskytne vám 3 spirity sovy které lze umístit na stromy přes celou mapu, a budou vám generovat dřevo - 1sova/1wood/1 kolo do zaniknutí lesů. Nepočítá se jako těžební tah.",
-      tech: 2,
       race: {
         connect: {
           id: 2,
@@ -472,6 +418,23 @@ export default async function main() {
               icon: "upgrades/goldkey.webp",
             },
           ],
+        },
+      },
+    },
+  });
+
+  await prisma.upgrade.create({
+    data: {
+      name: "Night",
+      price_gold: 0,
+      price_wood: 1,
+      icon: "upgrades/night.webp",
+      description:
+        "Elfové v noci dokážou na jedno kolo nakupovat věci bez požadavku přitomnosti . (přes celou mapu na dálku – každá budova lze využít pouze 1x ( napřikald když jsou 2 budovy brani karet lze využít pouze jednu.) platí i na ally elfa.",
+      tech: 1,
+      race: {
+        connect: {
+          id: 2,
         },
       },
     },
@@ -636,12 +599,6 @@ export default async function main() {
               icon: "upgrades/superinvisiblepotion.webp",
               description: "Dá hrdinovy Invisible na 3 kola. (1g)",
             },
-            {
-              name: "Good Night Potion",
-              icon: "upgrades/goodnightpotion.webp",
-              description:
-                "Dá nahodné enemy Jednotce Sleep  efekt (3kola po utoku na ni se probudi) (1g) Padne-li 1 Sleep dostane Creep (Dle výběru) Padne-li 2 Sleep Dostane enemy Unit (dle výběru) Padne-li 3x Sleep Dostane enemy Hero (dle výběru)",
-            },
           ],
         },
       },
@@ -706,6 +663,23 @@ export default async function main() {
 
   await prisma.upgrade.create({
     data: {
+      name: "Buffed Walkers",
+      price_gold: 0,
+      price_wood: 1,
+      icon: "upgrades/buffwalk.webp",
+      description:
+        "Chodci si změní schopnost poslani surovin na reroll tokenu. Smí rerollovat Enemy ally vlastní tokkeny každý chodec tento efekt muže využit jen jednou",
+      tech: 1,
+      race: {
+        connect: {
+          id: 3,
+        },
+      },
+    },
+  });
+
+  await prisma.upgrade.create({
+    data: {
       name: "Undead defense",
       price_gold: 1,
       price_wood: 1,
@@ -758,7 +732,8 @@ export default async function main() {
       price_gold: 1,
       price_wood: 0,
       icon: "upgrades/manipulation.webp",
-      description: "Přečaruje jednotku ne-hrdina,ne-dělník (1x)",
+      description:
+        "Přečaruje jednotku ne-hrdina,ne-dělník (1x) přečarovaná jednotka se mění na jednotku stejného techu a druhu tvojí rasu",
       tech: 2,
       race: {
         connect: {

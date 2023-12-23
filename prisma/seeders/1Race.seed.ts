@@ -27,7 +27,7 @@ export default async function main() {
           icon: "race/spells/BTNUproot.webp",
           name: "Unroot",
           description:
-            "Dovolí nočním elfům vykořenit jakoukoliv budovu , ztrácí 1/2 svých životů a získává + 1 pohyb a +1 útok",
+            "Dovolí nočním elfům vykořenit jakoukoliv budovu , ztrácí 1/2 svých životů a získává + 1 pohyb a +1 útok (Nelze vykořenit a zakořenit v jednom kole.)",
         },
       },
     },
@@ -40,7 +40,7 @@ export default async function main() {
       ability: {
         create: {
           description:
-            "Vybraný hrdina získá netranitelnost a netečnost vůči magii na 3 kola.",
+            "Vybraný hrdina získá nezranitelnost na 1 kol a získá +2 hp.",
           name: "Undying Rage",
           icon: "race/spells/barrier.jpg",
         },
@@ -54,8 +54,7 @@ export default async function main() {
       icon: "race/icons/240px-Undeadrace.png",
       ability: {
         create: {
-          description:
-            "Hráč si může zničit vlastní hlavní budovu a získá 2 zlata a 2 dřeva.",
+          description: "Hráč si může zničit vlastní budovu a získá její cenu.",
           name: "Sacrifice",
           icon: "race/spells/BTNSacrificialPit.webp",
         },
