@@ -62,7 +62,7 @@ export default async function main() {
     data: {
       name: "Eat",
       description:
-        "Sežere vybranou jednotku (jednotka musí být na dosah vaší jednotky se kterou použijete Eat",
+        "Sežere vybranou jednotku (jednotka musí být na dosah vaší jednotky se kterou použijete Eat, platí i na air)",
       icon: "cards/BTNEat.webp",
       times_in_deck: 2,
       race: {
@@ -81,7 +81,7 @@ export default async function main() {
     data: {
       name: "Ensnare",
       description:
-        "Zasíťuje jednotku který se nemůže hýbat do konce hry nebo do použití dispellu apod..",
+        "Zasíťuje jednotku která se nemůže hýbat do konce hry nebo do použití dispellu ( Negativní efekt )",
       icon: "cards/BTNEnsnare.webp",
       times_in_deck: 2,
       race: {
@@ -166,7 +166,7 @@ export default async function main() {
   await prisma.card.create({
     data: {
       name: "Militia",
-      description: "Všichni vaši delníci získají +1 utok a +1 hp na 2 kola",
+      description: "Všichni vaši delníci získají +2 utok a +2 hp na 2 kola",
       icon: "cards/BTNMilitia.webp",
       times_in_deck: 2,
       race: {
@@ -185,7 +185,7 @@ export default async function main() {
     data: {
       name: "Moon Glaive",
       description:
-        "Útoky vašich jednotek se odráží na 2 další jednotky na stejném poli po dobu jednoho kola.",
+        "Útok jedné vaší jednotky se odráží na 2 další jednotky na stejném poli na kterém útočí na jednotku po dobu jednoho kola.",
       icon: "cards/BTNMoonGlaive.webp",
       times_in_deck: 2,
       race: {
@@ -236,7 +236,7 @@ export default async function main() {
     data: {
       name: "Pillage",
       description:
-        "Na 3 kola každý útok na nepřátelskou budovu vygeneruje 1 gold (v podstatě počet útoků * 1. damage udělený je irelevantní)",
+        "Na 3 kola každý útok na nepřátelskou budovu vygeneruje 1 gold a 1 wood (v podstatě počet útoků * 1. damage udělený je irelevantní)",
       icon: "cards/BTNPillage.webp",
       times_in_deck: 2,
       race: {
@@ -318,7 +318,7 @@ export default async function main() {
     data: {
       name: "Spear",
       description:
-        "Hodí šíp na jedotku která je otrávená a dostává 1dmg za kolo dokud nezemře",
+        "Hodí šíp na jednotku která je otrávená a dostává 1dmg za kolo dokud nezemře (Negativní efekt)",
       icon: "cards/BTNSpear.webp",
       times_in_deck: 2,
       race: {

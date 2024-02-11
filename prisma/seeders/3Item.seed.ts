@@ -9,7 +9,7 @@ export default async function main() {
       {
         name: "Orb of death",
         description:
-          "+1 Dmg , + AA utok, + spec eff: Hodťe kostkou padne –li 3x zabijete jakoukoliv jednotku/hrdinu na 1 útok) ",
+          "+1 Dmg , + AA utok, + spec eff: Hodťe kostkou padne - li 3x zabijete jakoukoliv jednotku/hrdinu na 1 útok) ",
         icon: "items/BTNOrbOfDeath.webp",
         type: ItemType.Permanent,
         price_gold: 2,
@@ -18,7 +18,7 @@ export default async function main() {
       {
         name: "Orb of fire",
         description:
-          "+1Dmg, +AA útok, +spec eff: přidává útok +1,+2,+3 podle čísla na kostce (pouze na budovy)",
+          "+1Dmg, +AA útok, +spec eff: přidává útok +1,+2,+3 podle čísla na kostce (platí i na budovy)",
         icon: "items/BTNOrbOfFire.webp",
         type: ItemType.Permanent,
         price_gold: 2,
@@ -26,7 +26,8 @@ export default async function main() {
       },
       {
         name: "Orb of ice",
-        description: "+1Dmg, +AA útok, +Spec eff: hrdina může zničit hory",
+        description:
+          "+1Dmg, +AA útok, +Spec eff: hrdina může zničit hory svým útokem",
         icon: "items/BTNOrbOfIce.webp",
         type: ItemType.Permanent,
         price_gold: 2,
@@ -152,12 +153,12 @@ export default async function main() {
         description: "hrdina se stane na 2 kola nezranitelným",
         icon: "items/BTNPotionOfGods.webp",
         type: ItemType.Consumable,
-        price_gold: 2,
+        price_gold: 1,
         price_wood: 0,
       },
       {
         name: "Scroll of heal",
-        description: "olečí všechny vaše i spojencovi jednotky na maximum",
+        description: "Olečí všechny vaše i spojencovi jednotky na maximum",
         icon: "items/BTNScrollOfHeal.webp",
         type: ItemType.Consumable,
         price_gold: 3,
@@ -218,9 +219,7 @@ export default async function main() {
       description: "Move pro všechny vaše  jednotky (i hrdiny) na 1 kolo +1",
       icon: "items/BTNMoveAll.webp",
       race: {
-        connect: {
-          id: 1,
-        },
+        connect: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
       },
       type: ItemType.Consumable,
       price_gold: 3,

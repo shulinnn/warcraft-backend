@@ -71,7 +71,7 @@ export default async function main() {
     data: {
       name: "Hunter's hall",
       icon: "buildings/Hunters_Hall.webp",
-      priceGold: 3,
+      priceGold: 1,
       priceWood: 3,
       description: "Budova ve které můžete kupovat upgrady.",
       race: {
@@ -102,10 +102,10 @@ export default async function main() {
     data: {
       name: "Moon well",
       icon: "buildings/Moonwell.webp",
-      priceGold: 2,
-      priceWood: 2,
+      priceGold: 1,
+      priceWood: 1,
       description:
-        "Speciální budova která může jednout ohealovat jakoukoliv jednotku která je poblíž - 1 použití",
+        "Speciální budova která může jednout ohealovat jakoukoliv jednotku která je poblíž - 1 použití (na maximální počet životů, healuje ally i vlastní)",
       race: {
         connect: {
           id: 2,
@@ -258,8 +258,8 @@ export default async function main() {
     data: {
       name: "Farm",
       icon: "buildings/Farm.webp",
-      priceGold: 2,
-      priceWood: 2,
+      priceGold: 1,
+      priceWood: 1,
       description: "Speciální budova která může zablokovat průchodnost pole",
       race: {
         connect: {
@@ -413,8 +413,8 @@ export default async function main() {
     data: {
       name: "Orc Burrow",
       icon: "buildings/Orcburrow.webp",
-      priceGold: 2,
-      priceWood: 2,
+      priceGold: 1,
+      priceWood: 1,
       description: "Speciální budova do které se můžou schovat peónové.",
       race: {
         connect: {
@@ -442,7 +442,7 @@ export default async function main() {
   await prisma.building.create({
     data: {
       name: "Stronghold (level 2)",
-      icon: "buildings/StrongoldTECH2.webp",
+      icon: "buildings/StrongholdTECH2.webp",
       priceGold: 2,
       priceWood: 2,
       description: "Hlavní budova. Cena vylepšení na další úrověň je 5g 5w",
@@ -567,9 +567,9 @@ export default async function main() {
   await prisma.building.create({
     data: {
       name: "Nerubian Tower",
-      icon: "buildings/Orcburrow.webp",
-      priceGold: 2,
-      priceWood: 2,
+      icon: "buildings/Nerubian_Tower FARMA.webp",
+      priceGold: 1,
+      priceWood: 1,
       description: "Speciální budova která je v podstatě levnejší věž.",
       race: {
         connect: {
@@ -588,7 +588,7 @@ export default async function main() {
       description: "Hlavní budova. Cena vylepšení na další úrověň je 5g 5w",
       race: {
         connect: {
-          id: 3,
+          id: 4,
         },
       },
     },

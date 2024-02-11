@@ -42,7 +42,7 @@ export default async function main() {
             {
               name: "Stomp",
               description:
-                "Zničí nepřítelovi vylepšený upgrade (z obchodu i z kovárny)",
+                "Zničí nepřítelovi vylepšený upgrade (jen z kovárny)",
               icon: "hero/BTNWarStomp.webp",
             },
             {
@@ -166,7 +166,7 @@ export default async function main() {
             {
               name: "Cosmo heal",
               description:
-                "Vyléčí jednotku na maximum (lze použít i na spojence)",
+                "Vyléčí jednotku na maximum (lze použít i na spojence) po celé mapě",
               icon: "hero/BTNHealingWave.webp",
             },
             {
@@ -179,12 +179,12 @@ export default async function main() {
               name: "Vodoo dance",
               description:
                 "Hrdina přečaruje jakoukoliv vyvolanou jednotku na mapě (platí i na Archimunda, Pekelníka a ostatní hrdinské summony) (platí přes celou mapu)",
-              icon: "hero/BTNBigBadVoodooability.webp",
+              icon: "hero/BTNBigBadVoodooSpell.webp",
             },
             {
               name: "Serpent Ward",
               description:
-                "Hrdina vytvoří Hada s 1 hp který utočí na dalku 3 polí (je statický) a má dmg 3. (lze vyvolat každe kolo 1noho lze použít 3x ",
+                "Hrdina vytvoří Hada s 1 hp který utočí na dalku 3 polí (je statický) a má dmg 3. (lze vyvolat každe kolo 1noho lze použít 3x ",
               icon: "hero/BTnSerpentWard.webp",
             },
           ],
@@ -210,7 +210,7 @@ export default async function main() {
             {
               name: "Holy Light",
               description:
-                "Oživí vám nebo spojenci padlou jednotku (neoživuje hrdinu nebo dělníka.",
+                "Oživí vám jakoukoliv základní jednotku. (ne-hrdinu nebo spec. jednotka) jednotka již musí být mrtvá",
               icon: "hero/BTNHolyBolt.webp",
             },
             {
@@ -222,7 +222,7 @@ export default async function main() {
             {
               name: "God's Ankh",
               description:
-                "Oživí svého druhého nebo spojeneckého hrdinu na hlavní budově s 1hp a oživený hrdina nesmí jedno kolo nic dělat",
+                "Oživí svého druhého nebo spojeneckého hrdinu na hlavní budově (na hlavní budově hráče daného hrdiny) s 1hp a oživený hrdina nesmí jedno kolo nic dělat",
               icon: "hero/BTNResurrection.webp",
             },
             {
@@ -260,7 +260,7 @@ export default async function main() {
             {
               name: "Banish/Unbanish",
               description:
-                "Banish - toto kouzlo zabije speciální jednotku (hrdina na ni nemusi ani útočit) / Unbanish - Hrdina obnoví vyčerpané kouzla speciálním jednotkám.",
+                "Banish - toto kouzlo zabije speciální jednotku nebo summon jednotku (hrdina na ni nemusi ani útočit) / Unbanish - Hrdina obnoví vyčerpané kouzla speciálním jednotkám.",
               icon: "hero/BTNBanish.webp",
             },
             {
@@ -341,7 +341,7 @@ export default async function main() {
             {
               name: "Storm bolt",
               description:
-                "Na dálku 3 polí pošle cívku která poškodí nepřátele o 5 HP a ještě jej omráčí na jedno kolo ( jednotka se nemůže hýbat ani utočit, toto kouzlo  je bráno jako negativní effekt dá se diabilityovat pouze omráčení (humanRace?Raceskou passivkou)",
+                "Na dálku 3 polí pošle cívku která poškodí nepřátele o 5 HP a ještě jej omráčí na jedno kolo ( jednotka se nemůže hýbat ani utočit, toto kouzlo je bráno jako negativní effekt dá se dispellovat pouze omráčení",
               icon: "hero/BTNStormBolt.webp",
             },
             {
@@ -432,13 +432,13 @@ export default async function main() {
             {
               name: "Fire arrow",
               description:
-                "Vytvoří ohýnek který odhaluje neviditelne jednotky a jednotky si u něj mohou  vyměnovat itemy jeden item za kolo ( jen ally ) 1HP KAŽDY HRAČ MUŽE OBETOVAT DŘEVO NA PŘIDANÍ DŘEVA DO OHNER A ZVEDNE MU TIM HP O 1 POZOR KAŽDY HRAČ MUŽE DŘEVO PŘIDAT JEN JEDNOU.",
+                "Vytvoří oheň který odhaluje neviditelne jednotky a jednotky si u něj mohou vyměnovat itemy jeden item za kolo ( jen ally ) 1HP KAŽDY HRAČ MUŽE OBETOVAT DŘEVO NA PŘIDANÍ DŘEVA DO OHNE A ZVEDNE MU TIM HP O 1 POZOR KAŽDY HRAČ MUŽE DŘEVO PŘIDAT JEN JEDNOU. (Každý hráč může obětovat libovolný počet dřeva a zvedne mu tím HP o daný počet obětovaného dřeva. 1 wood = 1 hp)",
               icon: "hero/BTNsearingarrows.webp",
             },
             {
               name: "Starfall",
               description:
-                "Kněžka se nemuže hýbat začne poškozovat všechny nepřátelské hrdiny o 1 hp ( přes celou mapou ) pokud se hráč s ní pohne ruší se kouzlo",
+                "Kněžka se nemuže hýbat začne poškozovat všechny nepřátelské hrdiny o 1 hp ( přes celou mapou ) pokud se hráč s ní pohne ruší se kouzlo",
               icon: "hero/BTNstarfall.webp",
             },
             {
@@ -720,7 +720,7 @@ export default async function main() {
           data: [
             {
               name: "Construct",
-              description: "Postaví věž zadarmo.",
+              description: "Postaví věž zadarmo pod sebou nebo kolem sebe",
               icon: "hero/PASBTNEngineeringUpgrade.webp",
             },
             {

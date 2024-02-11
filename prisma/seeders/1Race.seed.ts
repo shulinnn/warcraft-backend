@@ -12,7 +12,7 @@ export default async function main() {
           name: "Dispell",
           icon: "race/spells/BTNDispelMagic.webp",
           description:
-            "Ruší negativní efekty karet, schopnosti hrdinů a rasových schopností.",
+            "Ruší určité negativní efekty.",
         },
       },
     },
