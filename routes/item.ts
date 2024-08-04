@@ -48,7 +48,7 @@ itemRouter.get("/items/race/:raceId", async (req: Request, res: Response) => {
         where: {
           race: {
             some: {
-              id: parseInt(req.params.raceId),
+              name: req.params.raceId,
             },
           },
         },

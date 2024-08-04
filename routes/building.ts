@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { Prisma, PrismaClient } from "@prisma/client";
 import { Request, Response, Router } from "express";
 
 const prisma = new PrismaClient();
@@ -11,7 +11,7 @@ buildingRouter.get(
       .findMany({
         where: {
           race: {
-            id: parseInt(req.params.raceId),
+            name: req.params.raceId,
           },
         },
       })
@@ -29,7 +29,7 @@ buildingRouter.get(
           id: parseInt(req.params.buildingId),
         },
         include: {
-          Unit: true,
+          unit: true,
         },
       })
       .catch((error) => res.status(400).json(error))

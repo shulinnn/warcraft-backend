@@ -8,6 +8,7 @@ import { creepRouter } from "../routes/creep";
 import { buildingRouter } from "../routes/building";
 import { unitRouter } from "../routes/unit";
 import { upgradeRouter } from "../routes/upgrade";
+import { critterRouter } from "../routes/critter";
 
 export const app: Application = express();
 const port = process.env.PORT || 8000;
@@ -22,6 +23,7 @@ app.use("/", creepRouter);
 app.use("/", buildingRouter);
 app.use("/", unitRouter);
 app.use("/",upgradeRouter);
+app.use("/",critterRouter);
 
 app.listen(port, () => {
   console.log(`Server is ONLINE at http://localhost:${port}`);

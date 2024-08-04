@@ -19,7 +19,7 @@ cardRouter.get(
         where: {
           race: {
             some: {
-              id: parseInt(request.params.raceId),
+              name: request.params.raceId,
             },
           },
         },

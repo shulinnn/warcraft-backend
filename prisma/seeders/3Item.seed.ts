@@ -727,7 +727,7 @@ export default async function main() {
       name: "Random Dragon Egg",
       icon: "items/BTNRandomDragonEgg.webp",
       description:
-        "1x reroll (Pří picku draka který se vám nelíbí můžete rerollnout)\nRed Dragon - Pří každém útoku na budovy spálí nepříteli 1 dřevo / spálí pole se stromy\nnewline test",
+        "1x reroll (Pří picku draka který se vám nelíbí můžete rerollnout)\nRed Dragon - Pří každém útoku na budovy spálí nepříteli 1 dřevo / spálí pole se stromy",
       type: ItemType.Consumable,
       price_gold: 0,
       price_wood: 0,

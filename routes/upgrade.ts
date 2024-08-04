@@ -11,7 +11,7 @@ upgradeRouter.get(
       .findMany({
         where: {
           race: {
-            id: parseInt(req.params.raceId),
+            name: req.params.raceId,
           },
         },
         include: {

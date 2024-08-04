@@ -20,12 +20,12 @@ raceRouter.get("/races", async (request: Request, response: Response) => {
 });
 
 raceRouter.get(
-  "/race/:raceId",
+  "/race/:raceName",
   async (request: Request, response: Response) => {
     await prisma.race
       .findFirst({
         where: {
-          id: parseInt(request.params.raceId),
+          name: request.params.raceName,
         },
         include: {
           ability: true,

@@ -13,7 +13,12 @@ mapRouter.get("/maps", async (req: Request, res: Response) => {
 
 mapRouter.get("/map/:mapId", async (req: Request, res: Response) => {
   await prisma.map
-    .findFirst({ where: { id: parseInt(req.params.mapId) } })
+    .findFirst({
+      where:
+        { id: parseInt(req.params.mapId) }, include: {
+          creep: true
+        }
+    })
     .catch((error) => res.status(400).json(error))
     .then((map) => res.status(200).json(map));
 });

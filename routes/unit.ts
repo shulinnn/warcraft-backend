@@ -9,7 +9,7 @@ unitRouter.get("/units/:raceId", async (req: Request, res: Response) => {
     .findMany({
       where: {
         race: {
-          id: parseInt(req.params.raceId),
+          name: req.params.raceId,
         },
       },
     })

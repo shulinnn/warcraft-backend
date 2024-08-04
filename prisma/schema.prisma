@@ -2,9 +2,8 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 datasource db {
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 generator client {
@@ -34,18 +33,21 @@ enum ItemType {
 }
 
 model Race {
-  id         Int        @id @default(autoincrement())
-  name       String
-  icon       String
-  hero       Hero[]
-  ability    Ability?
-  item       Item[]
-  Card       Card[]
-  Building   Building[]
-  created_at DateTime   @default(now())
-  updated_at DateTime   @updatedAt
-  Unit       Unit[]
-  Upgrade    Upgrade[]
+  id                      Int        @id @default(autoincrement())
+  name                    String
+  icon                    String
+  button_background_color String?
+  background_image        String?
+  background_color        String?
+  hero                    Hero[]
+  ability                 Ability?
+  item                    Item[]
+  Card                    Card[]
+  Building                Building[]
+  created_at              DateTime   @default(now())
+  updated_at              DateTime   @updatedAt
+  Unit                    Unit[]
+  Upgrade                 Upgrade[]
 }
 
 model Card {
@@ -76,20 +78,22 @@ model Hero {
 }
 
 model Ability {
-  id          Int      @id @default(autoincrement())
-  name        String
-  description String
-  icon        String
-  hero        Hero?    @relation(fields: [heroId], references: [id])
-  heroId      Int?
-  Race        Race?    @relation(fields: [raceId], references: [id])
-  raceId      Int?     @unique
-  created_at  DateTime @default(now())
-  updated_at  DateTime @updatedAt
-  Unit        Unit?    @relation(fields: [unitId], references: [id])
-  unitId      Int?
-  Upgrade     Upgrade? @relation(fields: [upgradeId], references: [id])
-  upgradeId   Int?
+  id           Int         @id @default(autoincrement())
+  name         String
+  description  String
+  icon         String
+  hero         Hero?       @relation(fields: [heroId], references: [id])
+  heroId       Int?
+  Race         Race?       @relation(fields: [raceId], references: [id])
+  raceId       Int?        @unique
+  created_at   DateTime    @default(now())
+  updated_at   DateTime    @updatedAt
+  Unit         Unit?       @relation(fields: [unitId], references: [id])
+  unitId       Int?
+  Upgrade      Upgrade?    @relation(fields: [upgradeId], references: [id])
+  upgradeId    Int?
+  PassiveMob   PassiveMob? @relation(fields: [passiveMobId], references: [id])
+  passiveMobId Int?
 }
 
 model Map {
@@ -141,7 +145,7 @@ model Building {
   priceWood   Int
   race        Race?    @relation(fields: [raceId], references: [id])
   raceId      Int?
-  Unit        Unit[]
+  unit        Unit[]
   created_at  DateTime @default(now())
   updated_at  DateTime @updatedAt
 }
@@ -182,4 +186,15 @@ model Upgrade {
   created_at  DateTime  @default(now())
   updated_at  DateTime  @updatedAt
   raceId      Int
+}
+
+model PassiveMob {
+  id          Int       @id @default(autoincrement())
+  name        String
+  icon        String?
+  description String
+  health      Int       @default(10)
+  ability     Ability[]
+  created_at  DateTime  @default(now())
+  updated_at  DateTime  @updatedAt
 }

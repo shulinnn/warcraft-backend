@@ -17,9 +17,9 @@ heroRouter.get("/heroes", async (req: Request, response: Response) => {
 });
 
 heroRouter.get(
-  "/heroes/race/:raceId",
+  "/heroes/race/:raceName",
   async (request: Request, response: Response) => {
-    if (request.params.raceId === "neutral") {
+    if (request.params.raceName === "neutral") {
       await prisma.hero
         .findMany({
           where: {
@@ -38,7 +38,9 @@ heroRouter.get(
       await prisma.hero
         .findMany({
           where: {
-            raceId: parseInt(request.params.raceId),
+            race: {
+              name: request.params.raceName
+            }
           },
         })
         .catch((error) => response.status(400).json(error))
