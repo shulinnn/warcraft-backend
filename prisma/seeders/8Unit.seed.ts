@@ -1,6 +1,5 @@
 import { AttackType, PrismaClient, UnitType } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import prisma from "./client";
 
 export default async function main() {
   await prisma.unit.create({
@@ -433,7 +432,7 @@ export default async function main() {
   await prisma.unit.create({
     data: {
       name: "Peón",
-      icon: "units/BTNPeon.jpg",
+      icon: "units/BTNPeon.webp",
       priceGold: 1,
       priceWood: 0,
       health: 3,
@@ -626,7 +625,7 @@ export default async function main() {
   await prisma.unit.create({
     data: {
       name: "Troll berserker",
-      icon: "units/Berserker.jpg",
+      icon: "units/Berseker.jpg",
       priceGold: 1,
       priceWood: 2,
       health: 6,
@@ -749,7 +748,7 @@ export default async function main() {
           name: "Spear",
           description:
             "Wyverna může zdvojnásobit efekt karty oštěpu. Lze zaměřit 2 jednotky jednou kartou nebo jednu jednotku otravit za 2dmg/kolo",
-          icon: "units/spells/PASBTNEnvenomedSpear",
+          icon: "units/spells/PASBTNEnvenomedSpear.webp",
         },
       },
     },
@@ -850,7 +849,7 @@ export default async function main() {
         create: {
           name: "Trade",
           description:
-            "Umožní spoluhráči poslat suroviny (10g max 10w max) 1x za hru.",
+            "Umožní spoluhráči poslat suroviny (10g max 10w max) 1x za hru. / Reroll tokenu pasivního moba",
           icon: "units/spells/trade.webp",
         },
       },
@@ -869,7 +868,7 @@ export default async function main() {
   await prisma.unit.create({
     data: {
       name: "Acolyte",
-      icon: "units/BTNAcolyte.jpg",
+      icon: "units/BTNAcolyte.webp",
       priceGold: 1,
       priceWood: 0,
       race: {
@@ -970,7 +969,7 @@ export default async function main() {
   await prisma.unit.create({
     data: {
       name: "Abomination",
-      icon: "units/PREghoul.jpg",
+      icon: "units/abom.jpg",
       priceGold: 1,
       priceWood: 1,
       health: 9,
@@ -1064,7 +1063,7 @@ export default async function main() {
   await prisma.unit.create({
     data: {
       name: "Necromancer",
-      icon: "units/PRenecro.jpg",
+      icon: "units/PREnecro.jpg",
       priceGold: 1,
       priceWood: 2,
       health: 8,
@@ -1158,7 +1157,7 @@ export default async function main() {
   await prisma.unit.create({
     data: {
       name: "Wyrm",
-      icon: "units/warm.jpg",
+      icon: "units/wyrm.jpg",
       priceGold: 2,
       priceWood: 2,
       health: 9,
@@ -1359,7 +1358,7 @@ export default async function main() {
         create: {
           name: "Wood Hole",
           description:
-            "Obřík stává double damage na poli s lesem(uplatnuje schopnost i když jsou lesy už vytěženy)",
+            "Obřík získá +1 damage na poli s lesem(uplatnuje schopnost i když jsou lesy už vytěženy)",
           icon: "units/spells/BTNGrabTree.webp",
         },
       },
@@ -1482,7 +1481,7 @@ export default async function main() {
       ability: {
         create: {
           name: "Beauty skin",
-          icon: "units/spells/PASBTNMagicImmunity",
+          icon: "units/spells/beautyskin.webp",
           description: "Driady jsou immuní vůči kartám",
         },
       },

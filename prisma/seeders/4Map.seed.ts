@@ -1,6 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import prisma from "./client";
 
 export default async function main() {
   await prisma.map.createMany({

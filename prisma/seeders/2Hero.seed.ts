@@ -1,6 +1,5 @@
 import { AttackType, PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import prisma from "./client";
 
 export default async function main() {
   const orcRace = await prisma.race.findFirst({ where: { name: "Orc" } });
@@ -55,7 +54,7 @@ export default async function main() {
               name: "Reincarnation Aura (aura)",
               description:
                 "Hrdinům se každe kolo obnoví jeden život. (platí po dobu života chieftaina) i pro spojence",
-              icon: "hero/BTNReincarnationAura.webp",
+              icon: "hero/reinaura.webp",
             },
           ],
         },
@@ -414,7 +413,7 @@ export default async function main() {
       name: "Priestess of the Moon",
       cost: 6,
       icon: "hero/BTNPriestessOfTheMoon.webp",
-      attack_type: AttackType.Melee,
+      attack_type: AttackType.AntiAir,
       race: {
         connect: {
           id: elfRace?.id,
@@ -542,7 +541,7 @@ export default async function main() {
       name: "Dread lord",
       cost: 6,
       icon: "hero/BTNHeroDreadLord.webp",
-      attack_type: AttackType.AntiAir,
+      attack_type: AttackType.Melee,
       race: {
         connect: {
           id: undeadRace?.id,

@@ -1,6 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import prisma from "./client";
 
 ///NE
 
@@ -352,8 +351,8 @@ export default async function main() {
     data: {
       name: "Beastiary",
       icon: "buildings/Beastiary.webp",
-      priceGold: 1,
-      priceWood: 3,
+      priceGold: 2,
+      priceWood: 2,
       description:
         "Budova ve které můžete stavět air jednotky. Každá jednotka stojí stejně jako budova.",
       race: {
@@ -367,7 +366,7 @@ export default async function main() {
   await prisma.building.create({
     data: {
       name: "Watch Tower",
-      icon: "buildings/Watch.webp",
+      icon: "buildings/Watch_Tower.webp",
       priceGold: 3,
       priceWood: 3,
       description: "Věž. Dostřel 3, damage 2",

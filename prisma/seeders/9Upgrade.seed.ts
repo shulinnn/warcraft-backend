@@ -1,6 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import prisma from "./client";
 
 export default async function main() {
   await prisma.upgrade.create({
@@ -243,7 +242,7 @@ export default async function main() {
       name: "Angry Woods",
       price_gold: 1,
       price_wood: 1,
-      icon: "upgrades/dwarftank.webp",
+      icon: "upgrades/angrywood.webp",
       description: "Vykořeněné budovy obdrží napořád 1 damage",
       tech: 1,
       race: {
@@ -292,7 +291,7 @@ export default async function main() {
       name: "Ent's teleport",
       price_gold: 1,
       price_wood: 0,
-      icon: "upgrades/entstelepoort.webp",
+      icon: "upgrades/entsteleport.webp",
       description:
         "Teleportuje všechny vykořeněné budovy kamkoliv na  mapě (1x) (nelze voda,skály)",
       tech: 2,
@@ -430,7 +429,7 @@ export default async function main() {
       price_wood: 1,
       icon: "upgrades/night.webp",
       description:
-        "Elfové v noci dokážou na jedno kolo nakupovat věci bez požadavku přitomnosti . (přes celou mapu na dálku – každá budova lze využít pouze 1x ( napřikald když jsou 2 budovy brani karet lze využít pouze jednu.) platí i na ally elfa.",
+        "Elfové v noci dokážou na jedno kolo nakupovat věci bez požadavku přitomnosti . (přes celou mapu na dálku – každá budova lze využít pouze 1x ( napřiklad když jsou 2 budovy brani karet lze využít pouze jednu.) platí i na ally elfa. (ally obchod + obchod rasy)",
       tech: 1,
       race: {
         connect: {
@@ -816,7 +815,7 @@ export default async function main() {
       name: "Damn Well",
       price_gold: 1,
       price_wood: 1,
-      icon: "upgrades/cursedgoldmine.webp",
+      icon: "upgrades/damnwell.webp",
       description:
         "Umožní vlastníkovi postavit zatracenou studnu , přes kterou si místo tahu braní/použití karty může kdokoliv ( ally,vy) vyměnit kartu která se mu nehodí pod podmínkou že jeho jednotka stojí na poli se studnou.Kartu, vrací hráč do spodu balíčku a poté si dobírá novou.(Studna má 15hp).Lze postavit všude (krom vody,skal) přes celou mapu. – 1Karta/kolo !",
       tech: 3,
@@ -835,7 +834,7 @@ export default async function main() {
       price_wood: 2,
       icon: "upgrades/sacrificedagger.webp",
       description:
-        "Až 5x v jednom kole smíte obětovat svoji,nebo spojeneckou jednotku a jejími současnými životy,doplnit životy svého nebo spojeneckého hrdiny. Lze použít v jakémkoliv kole jakýkoliv počet obětování. Jde použít (5x).",
+        "Až 3x v jednom kole smíte obětovat svoji,nebo spojeneckou jednotku a jejími současnými životy,doplnit životy svého nebo spojeneckého hrdiny. Lze použít v jakémkoliv kole jakýkoliv počet obětování. Jde použít (5x).",
       tech: 1,
       race: {
         connect: {

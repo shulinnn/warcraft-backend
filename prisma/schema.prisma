@@ -193,7 +193,7 @@ model PassiveMob {
   name        String
   icon        String?
   description String
-  health      Int       @default(10)
+  health      Int       @default(1)
   ability     Ability[]
   created_at  DateTime  @default(now())
   updated_at  DateTime  @updatedAt
