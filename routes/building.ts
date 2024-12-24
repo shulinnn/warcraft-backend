@@ -24,7 +24,7 @@ buildingRouter.get(
   "/building/:buildingId",
   async (req: Request, res: Response) => {
     await prisma.building
-      .findMany({
+      .findUnique({
         where: {
           id: parseInt(req.params.buildingId),
         },
