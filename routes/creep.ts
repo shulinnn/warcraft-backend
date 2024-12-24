@@ -23,6 +23,7 @@ creepRouter.get("/creep/:creepId", async (req: Request, response: Response) => {
       },
       include: {
         item: true,
+        map: true,
       },
     })
     .catch((error) => response.status(400).json(error))
