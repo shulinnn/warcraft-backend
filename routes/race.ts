@@ -84,7 +84,7 @@ raceRouter.get("/races", async (request: Request, response: Response) => {
   }
 });
 
-raceRouter.get('/races/:raceString', async (request: Request, response: Response) => {
+raceRouter.get('/race/:raceString', async (request: Request, response: Response) => {
   try {
     const { raceString } = request.params;
 
