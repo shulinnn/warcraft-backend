@@ -83,3 +83,30 @@ raceRouter.get("/races", async (request: Request, response: Response) => {
     response.status(400).json({ error: error.message });
   }
 });
+
+raceRouter.get('/races/:raceString', async (request: Request, response: Response) => {
+  try {
+    const { raceString } = request.params;
+
+    // Prisma query to find a race by its string identifier (e.g., name or slug)
+    const race = await prisma.race.findFirst({
+      where: {
+        OR: [
+          { name: { equals: raceString, mode: "insensitive" } }, // Case-insensitive match by name
+        ],
+      },
+      include: {
+        Ability: true, // Include related abilities
+      },
+    });
+
+    // Handle the response
+    if (!race) {
+      response.status(404).send("Race not found");
+    } else {
+      response.status(200).json(race);
+    }
+  } catch (error: any) {
+    response.status(400).json({ error: error.message });
+  }
+});
