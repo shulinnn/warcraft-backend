@@ -39,9 +39,9 @@ model Race {
   button_background_color String?
   background_image        String?
   background_color        String?
-  hero                    Hero[]
-  ability                 Ability?
-  item                    Item[]
+  Hero                    Hero[]
+  Ability                 Ability?
+  Item                    Item[]
   Card                    Card[]
   Building                Building[]
   created_at              DateTime   @default(now())

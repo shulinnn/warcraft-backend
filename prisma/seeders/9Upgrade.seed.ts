@@ -8,6 +8,7 @@ export default async function main() {
       price_gold: 1,
       price_wood: 1,
       description: "Tento upgrade lze zničit v prubehu hry „zničením upgradu",
+      icon: 'buildings/Scout_Tower.webp',
       tech: 1,
       race: {
         connect: {
@@ -130,7 +131,7 @@ export default async function main() {
       name: "Extra cannons",
       price_gold: 1,
       price_wood: 1,
-      icon: "upgrades/lostpackage.webp",
+      icon: "upgrades/extracannons.webp",
       description:
         "Po použití mají věže možnost 2x zaútočit v jednom kole.Trvání do konce života věží.",
       tech: 2,
@@ -215,6 +216,7 @@ export default async function main() {
       name: "Young Academy",
       price_gold: 0,
       price_wood: 3,
+      icon: "upgrades/dalarankid.webp",
       description:
         "Upgrade spawne 2 jednotky dítě dalaranu na kovárně. Tento upgrade lze zničit v prubehu hry „zničením upgradu",
       tech: 1,
@@ -242,7 +244,7 @@ export default async function main() {
       name: "Angry Woods",
       price_gold: 1,
       price_wood: 1,
-      icon: "upgrades/angrywood.webp",
+      icon: "upgrades/angrywoods.webp",
       description: "Vykořeněné budovy obdrží napořád 1 damage",
       tech: 1,
       race: {
@@ -398,7 +400,7 @@ export default async function main() {
       tech: 1,
       race: {
         connect: {
-          id: 1,
+          id: 2,
         },
       },
       ability: {
@@ -834,7 +836,7 @@ export default async function main() {
       price_wood: 2,
       icon: "upgrades/sacrificedagger.webp",
       description:
-        "Až 3x v jednom kole smíte obětovat svoji,nebo spojeneckou jednotku a jejími současnými životy,doplnit životy svého nebo spojeneckého hrdiny. Lze použít v jakémkoliv kole jakýkoliv počet obětování. Jde použít (5x).",
+        "Až 3x v jednom kole smíte obětovat svoji,nebo spojeneckou jednotku a jejími současnými životy,doplnit životy svého nebo spojeneckého hrdiny. Lze použít v jakémkoliv kole jakýkoliv počet obětování. Jde použít (3x).",
       tech: 1,
       race: {
         connect: {

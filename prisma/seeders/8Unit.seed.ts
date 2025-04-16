@@ -156,7 +156,7 @@ export default async function main() {
         connect: await prisma.building
           .findFirst({
             where: {
-              name: "Military Barracks",
+              name: "Arcane Sanctum",
             },
           })
           .then((e) => ({ id: e?.id })),
@@ -375,8 +375,8 @@ export default async function main() {
       unit_type: UnitType.Air,
       ability: {
         create: {
-          name: "Spell Steal",
-          description: "Aoe DMG za 1 hp (Passive )",
+          name: "Fragmation grenades",
+          description: "Mortar team zasáhne 2 jednotky a ubere dvoum jednotkam dany dany dmg, dostřel 2 pole",
           icon: "units/spells/BTNIronAmmo.webp",
         },
       },
@@ -849,7 +849,7 @@ export default async function main() {
         create: {
           name: "Trade",
           description:
-            "Umožní spoluhráči poslat suroviny (10g max 10w max) 1x za hru. / Reroll tokenu pasivního moba",
+            "Umožní spoluhráči poslat suroviny (10g max 10w max) 1x za hru. / Reroll tokenu pasivního moba ( Je potřeba mít vylepšený buffed walkers)",
           icon: "units/spells/trade.webp",
         },
       },
