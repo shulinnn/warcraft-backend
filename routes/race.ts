@@ -32,7 +32,7 @@ raceRouter.get("/races", async (request: Request, response: Response) => {
 
     // Add ability field if includeAbility is "true"
     if (includeAbility === "true") {
-      selectFields.ability = {
+      selectFields.Ability = {
         select: {
           id: true,
           name: true,
