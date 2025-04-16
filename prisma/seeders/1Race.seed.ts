@@ -8,7 +8,7 @@ export default async function main() {
       background_image : "race/backgrounds/human_bg.jpg",
       button_background_color: "#214D74",
       background_color : "#1E2F42",
-      ability: {
+      Ability: {
         create: {
           name: "Dispell",
           icon: "race/spells/BTNDispelMagic.webp",
@@ -26,7 +26,7 @@ export default async function main() {
       background_image : "race/backgrounds/nightElf_bg.jpg",
       button_background_color: "#226917",
       background_color : "#235A45",
-      ability: {
+      Ability: {
         create: {
           icon: "race/spells/BTNUproot.webp",
           name: "Unroot",
@@ -44,7 +44,7 @@ export default async function main() {
       background_image : "race/backgrounds/orc_bg.jpg",
       button_background_color: "#742F21",
       background_color : "#4D2822",
-      ability: {
+      Ability: {
         create: {
           description:
             "Vybraný hrdina získá nezranitelnost na 1 kol a získá +2 hp.",
@@ -62,7 +62,7 @@ export default async function main() {
       background_image : "race/backgrounds/undead_bg.jpg",
       button_background_color: "#4D2822",
       background_color : "#2C2A42",
-      ability: {
+      Ability: {
         create: {
           description: "Hráč si může zničit vlastní budovu a získá její cenu.",
           name: "Sacrifice",
