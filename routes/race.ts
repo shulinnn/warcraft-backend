@@ -4,7 +4,7 @@ import express, { Request, Response, Router } from "express";
 const prisma = new PrismaClient();
 export const raceRouter = Router();
 
-raceRouter.get("/race", async (request: Request, response: Response) => {
+raceRouter.get("/races", async (request: Request, response: Response) => {
   try {
     const {
       id, // Can now be a query parameter
